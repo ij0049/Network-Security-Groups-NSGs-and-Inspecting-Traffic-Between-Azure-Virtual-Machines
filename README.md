@@ -154,6 +154,8 @@ Named the group ACCOUNTANTS, set it as a Security Group, and clicked OK.
 
 Next, I configured the accounting folder’s permissions:
 
+![Image 1-29-25 at 12 50 PM](https://github.com/user-attachments/assets/ce514411-a0ef-4c2d-a196-c65a9f9892a7)
+
 I navigated to C:\accounting on DC-1.
 Right-clicked the folder, selected Properties, and went to the Sharing tab.
 Clicked Advanced Sharing, enabled sharing, and set the share name to accounting.
@@ -165,6 +167,8 @@ On Client-1, I logged in as a normal user, for example:
 Username: mydomain\someuser
 Password: (user’s password).
 
+![Image 1-29-25 at 12 52 PM](https://github.com/user-attachments/assets/6b29ffc3-f861-4003-ad57-96085d60a4de)
+
 I opened Run (Windows + R), typed \\DC-1, and pressed Enter.
 When I tried to access the accounting folder, I received a permissions error stating I didn’t have access.
 Observation: This made sense because someuser wasn’t a member of the ACCOUNTANTS security group yet.
@@ -173,6 +177,8 @@ Observation: This made sense because someuser wasn’t a member of the ACCOUNTAN
 
 I returned to DC-1:
 
+![Image 1-29-25 at 12 54 PM](https://github.com/user-attachments/assets/c7015ba8-e09e-4a9a-9165-7b1fdfaff3de)
+
 Opened ADUC and navigated to the _EMPLOYEES OU.
 Located the ACCOUNTANTS group, right-clicked it, and selected Properties.
 Went to the Members tab and clicked Add.
@@ -180,6 +186,8 @@ Added someuser to the group and clicked OK.
 This added the user to the ACCOUNTANTS security group.
 
 5. Retesting Access as Someuser:
+
+![Image 1-29-25 at 12 56 PM](https://github.com/user-attachments/assets/e411bcc1-cb34-4ebc-9e63-f6b29319f4b4)
 
 I logged back into Client-1 as someuser and retried accessing the accounting folder:
 
