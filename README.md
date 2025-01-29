@@ -35,6 +35,7 @@ In this project, we observe various network traffic to and from Azure Virtual Ma
 </p>
 <p>
 Creating Sample File Shares with Various Permissions
+
 1. Connecting to DC-1 as Domain Admin:
 
 I logged into DC-1 using my domain admin credentials:
@@ -43,13 +44,18 @@ Password: Cyberlab123!
 
 2. Creating the Folders:
 
+![Image 1-29-25 at 12 01 PM](https://github.com/user-attachments/assets/4447108a-356c-4cc1-bf1f-74a47ce74c6c)
+
 On DC-1, I navigated to the C:\ drive and created the following four folders:
 
-read-access
-write-access
-no-access
+read-access,
+write-access,
+no-access,
 accounting
+
 3. Configuring Folder Permissions and Sharing:
+
+![Image 1-29-25 at 12 05 PM](https://github.com/user-attachments/assets/8649cfc1-699f-4c32-9bc7-07f495b15213)
 
 Folder: read-access
 I right-clicked the read-access folder, selected Properties, and went to the Sharing tab.
@@ -57,21 +63,29 @@ I clicked Advanced Sharing, checked Share this folder, and set the share name as
 I clicked Permissions and added the Domain Users group.
 I set their permissions to Read only.
 I applied the changes and clicked OK.
+
+![Image 1-29-25 at 12 13 PM](https://github.com/user-attachments/assets/9deea49d-a673-4441-b58e-3431a7b4b9ea)
+
 Folder: write-access
 For the write-access folder, I repeated the same steps as above but:
 Set the share name as write-access.
 Granted the Domain Users group Full Control, which includes both Read and Write permissions.
+
+![Image 1-29-25 at 12 15 PM](https://github.com/user-attachments/assets/4bde8177-2edd-4ad8-8b10-4c4e77fa7a0c)
+
 Folder: no-access
 For the no-access folder:
 I set the share name as no-access.
 Instead of adding Domain Users, I added the Domain Admins group.
 I gave the Domain Admins group Full Control permissions.
 This ensured that only administrators could access this folder, while regular users had no access.
+
 4. Verifying the Setup:
 
 After setting up the shares, I tested the permissions by connecting to Client-1.
 
 Connecting to Client-1 as a Normal User
+
 5. Logging into Client-1:
 
 On Client-1, I logged in as a standard domain user, for example:
@@ -89,10 +103,13 @@ no-access: I couldn’t access this folder at all, receiving a permissions error
 <br />
 
 <p>
-<img src="https://i.imgur.com/LSE5vgj.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/> 
+
+![Image 1-29-25 at 12 19 PM](https://github.com/user-attachments/assets/9900e8ac-e2ed-4090-b437-bb1baafaa23e)
+
 </p>
 <p>
 Testing File Share Access as a Normal User
+
 1. Logging into Client-1:
 
 I logged into Client-1 as a normal domain user, for example:
